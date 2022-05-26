@@ -5,9 +5,13 @@ import { Usuario } from './Usuario';
 export class UsuarioService {
   private usuarios: Array<Usuario> = [];
 
-  public cria(usuario: Usuario): Usuario {
+  cria(usuario: Usuario): Usuario {
     this.usuarios.push(usuario);
 
     return usuario;
+  }
+
+  lista() {
+    return this.usuarios;
   }
 }

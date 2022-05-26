@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get } from '@nestjs/common';
 import { Usuario } from './Usuario';
 import { UsuarioService } from './usuario.service';
 
@@ -11,5 +11,10 @@ export class UsuarioController {
     const usuarioCriado = this.usuarioService.cria(usuario);
     console.log(usuario);
     return usuarioCriado;
+  }
+
+  @Get('lista')
+  lista() {
+    return this.usuarioService.lista();
   }
 }
